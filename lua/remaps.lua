@@ -1,10 +1,12 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- file operations
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
+vim.keymap.set('n', '<leader>fr', builtin.live_grep, {})
+vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>")
+vim.keymap.set("n", "<leader>fv", vim.cmd.Ex)
 
 -- move the highlighted text with Alt up and Alt Down 
 vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv")
@@ -22,9 +24,9 @@ vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
 -- replace the word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- Bufferlien select
-vim.keymap.set("n", "<C-p>", "<cmd>BufferLinePick<CR>")
+-- Buffer controls 
+vim.keymap.set("n", "<A-Right>", "<cmd>bnext<CR>")
+vim.keymap.set("n", "<A-Left>" ,"<cmd>bprevious<CR>")
+vim.keymap.set("n", "<A-w>" ,"<cmd>bd<CR>")
+vim.keymap.set("n", "<C-p>" ,"<cmd>BufferLinePick<CR>")
 
--- Search project TODO's 
-
-vim.keymap.set("n", "<leader>t", "<cmd>TodoTelescope<CR>")

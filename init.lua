@@ -3,6 +3,7 @@ require('remaps')
 require('options')
 require('configs.tree')
 require('configs.lsp')
+require('configs.which')
 require('lualine').setup()
 require('todo-comments').setup()
 require("bufferline").setup{}

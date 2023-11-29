@@ -1,4 +1,4 @@
-vim.cmd[[colorscheme dracula]]
+vim.cmd[[colorscheme kanagawa-dragon]]
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
